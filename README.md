@@ -34,6 +34,26 @@ To enhance real-world performance and prediction reliability, the system integra
 - **Sample Output CSV**: `results.csv` (auto-generated during live testing)  
 
 
+
+## Build & Run Instructions
+
+### Requirements
+
+- C++17 compatible compiler (e.g., `g++`, Clang, or Xcode)
+- OpenCV 4.x installed and properly linked
+- ONNX model file `mini_xception.onnx` placed in `/models/`
+
+### Build (Linux/macOS example with g++)
+
+```bash
+g++ -std=c++17 -o emotion_app \
+    main.cpp emotion_classifier.cpp face_detector.cpp video_overlay.cpp utils.cpp \
+    `pkg-config --cflags --libs opencv4`
+```
+### Run Main.cpp
+- Press T to toggle Test-Time Augmentation (TTA) on/off
+- Press ESC to exit
+- Frame-by-frame predictions and confidence scores are saved in results.csv
 ## **Project Structure**
 cv_final/
 
@@ -78,61 +98,6 @@ README.md – Project documentation (this file)
 
 Niloofar_Karimi_CV_Final_Project_Report.pdf – Final report for the project
 
-
-## Build & Run Instructions
-
-### Requirements
-
-- C++17 compatible compiler (e.g., `g++`, Clang, or Xcode)
-- OpenCV 4.x installed and properly linked
-- ONNX model file `mini_xception.onnx` placed in `/models/`
-
-### Build (Linux/macOS example with g++)
-
-```bash
-g++ -std=c++17 -o emotion_app \
-    main.cpp emotion_classifier.cpp face_detector.cpp video_overlay.cpp utils.cpp \
-    `pkg-config --cflags --libs opencv4`
-```
-### Run Main.cpp
-- Press T to toggle Test-Time Augmentation (TTA) on/off
-- Press ESC to exit
-- Frame-by-frame predictions and confidence scores are saved in results.csv
-
-cv_final/
-│
-├── main.cpp
-│   └─ Entry point: captures webcam input, performs face detection and emotion recognition (with optional TTA), and logs results to CSV
-│
-├── batch_test.cpp
-│   └─ (Optional) Test script for static image evaluation
-│
-├── config.hpp
-│   └─ Contains global constants, file paths, and emotion label definitions
-│
-├── emotion_classifier.hpp / emotion_classifier.cpp
-│   └─ Handles ONNX model loading, preprocessing, inference, and TTA logic
-│
-├── face_detector.hpp / face_detector.cpp
-│   └─ Implements real-time face and eye detection using Haar cascades
-│
-├── video_overlay.hpp / video_overlay.cpp
-│   └─ Draws bounding boxes, labels, and confidence scores on video frames
-│
-├── utils.hpp / utils.cpp
-│   └─ Provides helper functions for preprocessing (e.g., grayscale, normalization)
-│
-├── models/
-│   └─ mini_xception.onnx — Pretrained Mini-Xception model
-│
-├── resources/
-│   ├─ haarcascade_frontalface_default.xml — Face detector
-│   ├─ haarcascade_eye.xml — Eye detector for alignment
-│   ├─ test_images/ — Sample grayscale faces for offline testing
-│   └─ results.csv — Auto-generated frame-by-frame emotion log
-│
-├── README.md — Project documentation
-└── Niloofar_Karimi_CV_Final_Project_Report.pdf — Final report
 
 
 ###  Evaluation Summary
