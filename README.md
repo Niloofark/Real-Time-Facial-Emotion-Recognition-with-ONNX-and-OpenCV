@@ -34,7 +34,49 @@ To enhance real-world performance and prediction reliability, the system integra
 - **Sample Output CSV**: `results.csv` (auto-generated during live testing)  
 
 
+**Project Structure**
+cv_final/
 
+- main.cpp – Entry point for the real-time emotion recognition app
+Captures webcam input, performs face detection and emotion classification (with optional TTA), and logs results to CSV.
+
+- batch_test.cpp – (Optional) Tests emotion recognition on static images.
+
+- config.hpp – Global paths, constants, and emotion label definitions.
+
+- emotion_classifier.hpp / .cpp – Loads and runs the ONNX model, performs inference, and implements Test-Time Augmentation (TTA).
+
+- face_detector.hpp / .cpp – Detects faces and eyes using OpenCV Haar cascades; handles alignment.
+
+- video_overlay.hpp / .cpp – Draws bounding boxes, labels, and confidence scores on video frames in real time.
+
+- utils.hpp / .cpp – Contains helper functions for preprocessing (e.g., grayscale conversion, normalization).
+
+models/
+
+- mini_xception.onnx – Pretrained Mini-Xception model used for emotion classification.
+
+resources/
+
+- haarcascade_frontalface_default.xml – OpenCV frontal face detector.
+
+- haarcascade_eye.xml – Eye detector used for face alignment.
+
+- test_images/ – (Optional) Sample grayscale faces for offline evaluation.
+
+- results.csv – Auto-generated log with:
+
+    - Frame number
+
+    - Predicted emotion label
+
+    - Confidence score
+
+    - TTA mode (Yes/No)
+
+README.md – Project documentation (this file)
+
+Niloofar_Karimi_CV_Final_Project_Report.pdf – Final report for the project
 
 
 ## Build & Run Instructions
