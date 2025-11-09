@@ -57,49 +57,41 @@ g++ -std=c++17 -o emotion_app \
 - Press ESC to exit
 - Frame-by-frame predictions and confidence scores are saved in results.csv
 
-Project Structure
 cv_final/
+│
+├── main.cpp
+│   └─ Entry point: captures webcam input, performs face detection and emotion recognition (with optional TTA), and logs results to CSV
+│
+├── batch_test.cpp
+│   └─ (Optional) Test script for static image evaluation
+│
+├── config.hpp
+│   └─ Contains global constants, file paths, and emotion label definitions
+│
+├── emotion_classifier.hpp / emotion_classifier.cpp
+│   └─ Handles ONNX model loading, preprocessing, inference, and TTA logic
+│
+├── face_detector.hpp / face_detector.cpp
+│   └─ Implements real-time face and eye detection using Haar cascades
+│
+├── video_overlay.hpp / video_overlay.cpp
+│   └─ Draws bounding boxes, labels, and confidence scores on video frames
+│
+├── utils.hpp / utils.cpp
+│   └─ Provides helper functions for preprocessing (e.g., grayscale, normalization)
+│
+├── models/
+│   └─ mini_xception.onnx — Pretrained Mini-Xception model
+│
+├── resources/
+│   ├─ haarcascade_frontalface_default.xml — Face detector
+│   ├─ haarcascade_eye.xml — Eye detector for alignment
+│   ├─ test_images/ — Sample grayscale faces for offline testing
+│   └─ results.csv — Auto-generated frame-by-frame emotion log
+│
+├── README.md — Project documentation
+└── Niloofar_Karimi_CV_Final_Project_Report.pdf — Final report
 
-main.cpp – Entry point for the real-time emotion recognition app
-Captures webcam input, performs face detection and emotion classification (with optional TTA), and logs results to CSV.
-
-batch_test.cpp – (Optional) Tests emotion recognition on static images.
-
-config.hpp – Global paths, constants, and emotion label definitions.
-
-emotion_classifier.hpp / .cpp – Loads and runs the ONNX model, performs inference, and implements Test-Time Augmentation (TTA).
-
-face_detector.hpp / .cpp – Detects faces and eyes using OpenCV Haar cascades; handles alignment.
-
-video_overlay.hpp / .cpp – Draws bounding boxes, labels, and confidence scores on video frames in real time.
-
-utils.hpp / .cpp – Contains helper functions for preprocessing (e.g., grayscale conversion, normalization).
-
-models/
-
-mini_xception.onnx – Pretrained Mini-Xception model used for emotion classification.
-
-resources/
-
-haarcascade_frontalface_default.xml – OpenCV frontal face detector.
-
-haarcascade_eye.xml – Eye detector used for face alignment.
-
-test_images/ – (Optional) Sample grayscale faces for offline evaluation.
-
-results.csv – Auto-generated log with:
-
-Frame number
-
-Predicted emotion label
-
-Confidence score
-
-TTA mode (Yes/No)
-
-README.md – Project documentation (this file)
-
-Niloofar_Karimi_CV_Final_Project_Report.pdf – Final report for the project
 
 ###  Evaluation Summary
 
