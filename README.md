@@ -34,7 +34,7 @@ To enhance real-world performance and prediction reliability, the system integra
 - **Sample Output CSV**: `results.csv` (auto-generated during live testing)  
 
 
-**Project Structure**
+## **Project Structure**
 cv_final/
 
 - main.cpp – Entry point for the real-time emotion recognition app
