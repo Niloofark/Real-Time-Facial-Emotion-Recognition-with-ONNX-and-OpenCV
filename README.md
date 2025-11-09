@@ -76,7 +76,6 @@ resources/
 - haarcascade_eye.xml – Eye detector used for face alignment.
 - test_images/ – (Optional) Sample grayscale faces for offline evaluation.
 - results.csv – Auto-generated log with:
-
     - Frame number
     - Predicted emotion label
     - Confidence score
