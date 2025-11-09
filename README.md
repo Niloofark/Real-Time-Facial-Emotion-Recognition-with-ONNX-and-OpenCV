@@ -55,7 +55,7 @@ g++ -std=c++17 -o emotion_app \
 - Press ESC to exit
 - Frame-by-frame predictions and confidence scores are saved in results.csv
 ## **Project Structure**
-cv_final/
+1. cv_final/
 
 - main.cpp – Entry point for the real-time emotion recognition app
 Captures webcam input, performs face detection and emotion classification (with optional TTA), and logs results to CSV.
@@ -66,11 +66,11 @@ Captures webcam input, performs face detection and emotion classification (with 
 - video_overlay.hpp / .cpp – Draws bounding boxes, labels, and confidence scores on video frames in real time.
 - utils.hpp / .cpp – Contains helper functions for preprocessing (e.g., grayscale conversion, normalization).
 
-models/
+2. models/
 
 - mini_xception.onnx – Pretrained Mini-Xception model used for emotion classification.
   
-resources/
+3. resources/
 
 - haarcascade_frontalface_default.xml – OpenCV frontal face detector.
 - haarcascade_eye.xml – Eye detector used for face alignment.
@@ -81,9 +81,9 @@ resources/
     - Confidence score
     - TTA mode (Yes/No)
 
-README.md – Project documentation (this file)
+4. README.md – Project documentation (this file)
 
-Niloofar_Karimi_CV_Final_Project_Report.pdf – Final report for the project
+5. Niloofar_Karimi_CV_Final_Project_Report.pdf – Final report for the project
 
 
 
