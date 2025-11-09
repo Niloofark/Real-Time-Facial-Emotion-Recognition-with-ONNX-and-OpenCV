@@ -38,46 +38,45 @@ To enhance real-world performance and prediction reliability, the system integra
 ## Project Structure
 
 cv_final/
-│
-├── main.cpp # Real-time application entry point
-│ # - Captures webcam input
-│ # - Performs face detection
-│ # - Applies emotion classification (with TTA)
-│ # - Draws overlays and logs to CSV
-│
-├── batch_test.cpp # (Optional) Script to test emotion recognition on static images
-│
-├── config.hpp # Global paths, constants, and emotion label definitions
-│
-├── emotion_classifier.hpp # Class declaration for EmotionClassifier
-├── emotion_classifier.cpp # ONNX model loading, inference, and TTA logic
-│
-├── face_detector.hpp # Class declaration for FaceDetector (Haar cascade)
-├── face_detector.cpp # Face detection logic using OpenCV's Haar cascades
-│
-├── video_overlay.hpp # Overlay utility for drawing boxes, labels, and confidence
-├── video_overlay.cpp # Draws real-time detection results on the video frame
-│
-├── utils.hpp # General-purpose utility functions (e.g., grayscale conversion)
-├── utils.cpp # Preprocessing helpers for image handling
-│
-├── models/
-│ └── mini_xception.onnx # Pretrained Mini-Xception model in ONNX format
-│
-├── resources/
-│ ├── haarcascade_frontalface_default.xml # OpenCV face detector
-│ └── haarcascade_eye.xml # OpenCV eye detector for face alignment
-│
-├── test_images/ # (Optional) Folder containing sample grayscale face images for offline evaluation
-│
-├── results.csv # Auto-generated CSV containing frame-by-frame:
-│ # - Frame number
-│ # - Emotion label
-│ # - Confidence score
-│ # - TTA mode used (Yes/No)
-│
-├── README.md # Project documentation (this file)
-└── Niloofar_Karimi_CV_Final_Project_Report.pdf # Final IEEE-style written report
+main.cpp # Real-time application entry point
+- Captures webcam input
+- Performs face detection
+- Applies emotion classification (with TTA)
+- Draws overlays and logs to CSV
+
+batch_test.cpp # (Optional) Script to test emotion recognition on static images
+config.hpp # Global paths, constants, and emotion label definitions
+emotion_classifier.hpp # Class declaration for EmotionClassifier
+emotion_classifier.cpp # ONNX model loading, inference, and TTA logic
+face_detector.hpp # Class declaration for FaceDetector (Haar cascade)
+face_detector.cpp # Face detection logic using OpenCV's Haar cascades
+
+
+video_overlay.hpp # Overlay utility for drawing boxes, labels, and confidence
+video_overlay.cpp # Draws real-time detection results on the video frame
+
+
+utils.hpp # General-purpose utility functions (e.g., grayscale conversion)
+utils.cpp # Preprocessing helpers for image handling
+
+
+models/
+mini_xception.onnx # Pretrained Mini-Xception model in ONNX format
+
+
+resources/
+haarcascade_frontalface_default.xml # OpenCV face detector
+haarcascade_eye.xml # OpenCV eye detector for face alignment
+
+test_images/ # (Optional) Folder containing sample grayscale face images for offline evaluation
+results.csv # Auto-generated CSV containing frame-by-frame:
+- Frame number
+- Emotion label
+- Confidence score
+- TTA mode used (Yes/No)
+
+README.md # Project documentation (this file)
+Niloofar_Karimi_CV_Final_Project_Report.pdf # Final IEEE-style written report
 
 ## Build & Run Instructions
 
