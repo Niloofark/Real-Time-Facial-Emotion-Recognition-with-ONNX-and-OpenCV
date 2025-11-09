@@ -37,7 +37,7 @@ To enhance real-world performance and prediction reliability, the system integra
 
 ## Project Structure
 
-cv_final/
+**cv_final/**
 1. main.cpp # Real-time application entry point
 - Captures webcam input
 - Performs face detection
@@ -60,23 +60,22 @@ cv_final/
 11. utils.cpp # Preprocessing helpers for image handling
 
 
-models/
+**models/**
 mini_xception.onnx # Pretrained Mini-Xception model in ONNX format
 
 
-resources/
+**resources/**
 1. haarcascade_frontalface_default.xml # OpenCV face detector
 2. haarcascade_eye.xml # OpenCV eye detector for face alignment
-
-test_images/ # (Optional) Folder containing sample grayscale face images for offline evaluation
-results.csv # Auto-generated CSV containing frame-by-frame:
+3. test_images/ # (Optional) Folder containing sample grayscale face images for offline evaluation
+4. results.csv # Auto-generated CSV containing frame-by-frame:
 - Frame number
 - Emotion label
 - Confidence score
 - TTA mode used (Yes/No)
 
 README.md # Project documentation (this file)
-Niloofar_Karimi_CV_Final_Project_Report.pdf # Final IEEE-style written report
+Niloofar_Karimi_CV_Final_Project_Report.pdf 
 
 ## Build & Run Instructions
 
